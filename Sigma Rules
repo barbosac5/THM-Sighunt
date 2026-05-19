@@ -1,0 +1,25 @@
+# Rule 1: Malicious mshta
+title: Malicious mshta 
+id: 5d96c634-34f9-4331-a44d-15a6163f50a6 #Universally Unique Identifier (UUID) from https://www.uuidgenerator.net
+status: experimental
+description: Execution of malicious HTA payload from a phishing link.
+author: barbosac5 
+date: 5/16/2026
+modified: 5/16/2026
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+    EventID: 1 
+    Image: C:\Windows\SysWOW64\mshta.exe
+    ParentImage: C:\Program Files\Google\Chrome\Application\chrome.exe
+  condition: selection 
+fields: 
+
+falsepositives: #Any possible false positives that could trigger the rule.
+
+level: medium 
+tags: #Associated TTPs from MITRE ATT&CK
+  - attack.credential_access #MITRE Tactic
+  - attack.t1110 #MITRE Technique
