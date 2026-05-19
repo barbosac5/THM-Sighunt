@@ -1,4 +1,4 @@
-# THM-Sighunt
+# TryHackMe-Sighunt Challenge
 Creation of detection rules through Sigma based on intel of a new threat.
 
 # Scenario
